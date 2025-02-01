@@ -1,6 +1,6 @@
 # Ange primärt och sekundärt SSID, där det primära ska vara aktivt efter scriptet körts
-$PrimarySSID = "LANN-Corporate"
-$SecondarySSID = "LANN"
+$PrimarySSID = "REPLACEMENT-WLAN"
+$SecondarySSID = "EXISTING-WLAN"
 
 # Hämta en lista över alla kända WLAN-profiler på datorn
 $WlanProfiles = netsh wlan show profiles | Select-String "All User Profile\s*:\s*(.+)" | ForEach-Object { $_.Matches.Groups[1].Value.Trim() }
@@ -27,7 +27,7 @@ $EventID = 1004
 $EventMessage = "Datorn är ansluten till SSID '$CurrentSSID'."
 Write-EventLog -LogName $LogName -Source $Source -EventId $EventID -EntryType Information -Message $EventMessage
 
-# Om datorn har "LANN" men saknar "LANN-Corporate" → Logga varning i EventLog
+# Om datorn har "EXISTING-WLAN" men saknar "REPLACEMENT-WLAN" → Logga varning i EventLog
 if ($HasSecondary -and -not $HasPrimary) {
     $EventID = 1002
     $EventMessage = "Varning: Datorn är ansluten till '$SecondarySSID' men saknar '$PrimarySSID'."
