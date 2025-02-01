@@ -1,0 +1,72 @@
+# Windows systemfiler
+Thumbs.db
+Desktop.ini
+*.cab
+*.msi
+*.msm
+*.msp
+*.log
+werd*.cab
+werd*.xml
+
+# VSCode settings
+.vscode/
+
+# PowerShell session-filer
+*.ps1.session
+
+# Loggfiler
+*.log
+
+# Cache-filer
+*.cache
+
+# Kompilerade filer (för .NET, C++, etc.)
+*.dll
+*.exe
+*.pdb
+
+# macOS-specifika filer
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux-specific
+*~
+*.swp
+*.swo
+
+# Python bytecode-filer
+*.pyc
+*.pyo
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# IDE- och editor-specifika filer
+.idea/
+.vscode/
+
+# Virtuella miljöer och systemfiler
+.vagrant/
+.virtualenv/
+*.vbox
+*.vbox-prev
+docker-compose.override.yml
+
+# PHP och Composer
+/vendor/
+*.log
+*.lock
+
+# Ruby on Rails
+/log/*
+/tmp/*
+/db/*.sqlite3
