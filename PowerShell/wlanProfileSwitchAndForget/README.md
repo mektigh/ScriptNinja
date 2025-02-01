@@ -20,8 +20,7 @@ $SecondarySSID = "Wi-Fi OLD"
 
 ## Så här kör du processen i terminalen:
 1. Öppna PowerShell som administratör.
-2. 
-3. Kör kommandon:
+2. Kör kommandon:
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
