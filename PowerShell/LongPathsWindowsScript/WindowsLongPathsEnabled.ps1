@@ -23,7 +23,7 @@ $registryValue = 1
 # Kontrollera om nyckeln redan finns
 if (Test-Path $registryPath) {
     $currentValue = Get-ItemProperty -Path $registryPath -Name $registryName -ErrorAction SilentlyContinue
-    if ($currentValue -ne $null -and $currentValue.$registryName -eq $registryValue) {
+    if ($null -ne $currentValue -and $currentValue.$registryName -eq $registryValue) {
         Write-Output "LongPathsEnabled är redan aktiverat."
     } else {
         Set-ItemProperty -Path $registryPath -Name $registryName -Value $registryValue -Type DWord
