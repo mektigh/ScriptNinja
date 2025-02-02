@@ -27,7 +27,7 @@ $EventID = 1004
 $EventMessage = "Datorn är ansluten till SSID '$CurrentSSID'."
 Write-EventLog -LogName $LogName -Source $Source -EventId $EventID -EntryType Information -Message $EventMessage
 
-# Om datorn har "EXISTING-WLAN" men saknar "REPLACEMENT-WLAN" → Logga varning i EventLog
+# Om datorn har SecondarySSID (Gammalt) men saknar Primary SSID (Nya) → Logga varning i EventLog
 if ($HasSecondary -and -not $HasPrimary) {
     $EventID = 1002
     $EventMessage = "Varning: Datorn är ansluten till '$SecondarySSID' men saknar '$PrimarySSID'."
